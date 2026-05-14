@@ -116,6 +116,7 @@
   <button class="btn" onclick="showSection('schedule')">Upcoming Runs</button>
 </div>
 
+<!-- ROUTES -->
 <div class="container" id="homeView">
 
   <div
@@ -142,10 +143,16 @@
 
   <div class="grid" id="routesGrid"></div>
 </div>
-<div class="container" id="homeView">
-  <div class="grid" id="routesGrid"></div>
-</div>
 
+<!-- UPCOMING RUNS -->
+<div
+  class="container"
+  id="scheduleView"
+  style="display:none;"
+>
+  <h2>Upcoming Runs</h2>
+  <div id="scheduleGrid"></div>
+</div>
 <div class="container" id="routeView">
   <div class="back" onclick="showHome()">← Back</div>
 
