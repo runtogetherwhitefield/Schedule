@@ -320,18 +320,24 @@ function openScheduledRoute(run, route) {
     `${route.distance} km · ${run.runningGroup} · ${run.date} ${run.time}`;
 }
 function openRoute(route) {
-  // Hide everything except detailed route view
   document.getElementById('homeView').style.display = 'none';
   document.getElementById('scheduleView').style.display = 'none';
   document.getElementById('routeView').style.display = 'block';
 
+  // Re-show hidden elements
+  document.getElementById('map').style.display = 'block';
+  document.getElementById('stravaLink').style.display = 'inline-block';
+  document.getElementById('gpxDownload').style.display = 'inline-block';
+
   document.getElementById('routeName').innerText = route.name;
-  document.getElementById('routeInfo').innerText = route.distance + ' km';
+  document.getElementById('routeInfo').innerText =
+    route.distance + ' km';
+
   document.getElementById('routeDescription').innerText =
     route.description || '';
 
-  document.getElementById('stravaLink').href = route.strava;
-  document.getElementById('gpxDownload').href = route.gpx;
+  document.getElementById('stravaLink').href = route.strava || '#';
+  document.getElementById('gpxDownload').href = route.gpx || '';
 
   setTimeout(() => {
     if (map) map.remove();
@@ -342,14 +348,16 @@ function openRoute(route) {
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     ).addTo(map);
 
-    gpxLayer = new L.GPX(route.gpx, {
-      async: true,
-      polyline_options: { color: 'purple' }
-    })
-    .on('loaded', function(e) {
-      map.fitBounds(e.target.getBounds());
-    })
-    .addTo(map);
+    if (route.gpx) {
+      gpxLayer = new L.GPX(route.gpx, {
+        async: true,
+        polyline_options: { color: 'lime' }
+      })
+      .on('loaded', function(e) {
+        map.fitBounds(e.target.getBounds());
+      })
+      .addTo(map);
+    }
 
   }, 100);
 }
