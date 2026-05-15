@@ -378,6 +378,13 @@ function showSection(section) {
     section === 'schedule' ? 'block' : 'none';
 
   document.getElementById('routeView').style.display = 'none';
+
+  // Rebuild route thumbnails when Routes tab opens
+  if (section === 'routes') {
+    setTimeout(() => {
+      renderGrid();
+    }, 50);
+  }
 }
 function showHome() {
   document.getElementById('routeView').style.display = 'none';
