@@ -21,24 +21,14 @@
     }
 
     header {
-  background: #151924;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 14px 16px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  border-bottom: 1px solid #222;
-}
-
-.header-logo {
-  max-height: 72px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
+     padding: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      background: #151924;
+      position: sticky;
+      top: 0;
+    }
+    
     .container {
       padding: 16px;
     }
@@ -118,14 +108,8 @@
   </style>
 </head>
 <body>
-
-<header class="site-header">
-  <img
-    src="./images/rtw logo.png"
-    alt="RunTogether Whitefield"
-    class="header-logo"
-  />
-</header>
+<header>🏃 RunTogether Whitefield</header>
+  
 <div style="padding:12px 16px; display:flex; gap:10px; background:#151924; border-top:1px solid #222;">
   <button class="btn" onclick="showSection('schedule')">Upcoming Runs</button>
   <button class="btn" onclick="showSection('routes')">Routes</button>
