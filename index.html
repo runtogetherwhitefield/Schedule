@@ -117,7 +117,7 @@
 </div>
 
 <!-- ROUTES -->
-<div class="container" id="homeView">
+<div class="container" id="homeView" style="display:none;">
 
   <div
     style="
@@ -148,7 +148,6 @@
 <div
   class="container"
   id="scheduleView"
-  style="display:none;"
 >
   <h2>Upcoming Runs</h2>
   <div id="scheduleGrid"></div>
@@ -169,7 +168,7 @@
 <script>
 let routes = [];
 let scheduledRuns = [];
-let previousSection = 'routes';
+let previousSection = 'schedule';
 let activeSeason = 'all';  
 
 // Replace with your published Google Sheet JSON endpoint
@@ -182,6 +181,7 @@ async function loadRoutes() {
   routes = await res.json();
   renderGrid();
   loadSchedule();
+  showSection('schedule');
 }
 
 async function loadSchedule() {
