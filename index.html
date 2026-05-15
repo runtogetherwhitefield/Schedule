@@ -358,7 +358,7 @@ function openRoute(route) {
     if (route.gpx) {
       gpxLayer = new L.GPX(route.gpx, {
         async: true,
-        polyline_options: { color: 'lime' }
+        polyline_options: { color: 'purple' }
       })
       .on('loaded', function(e) {
         map.fitBounds(e.target.getBounds());
