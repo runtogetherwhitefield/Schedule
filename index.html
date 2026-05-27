@@ -21,13 +21,21 @@
     }
 
     header {
-     padding: 16px;
-      font-size: 20px;
-      font-weight: bold;
+      padding: 12px 16px;
       background: #151924;
       position: sticky;
       top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
     }
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
     
     .container {
       padding: 16px;
@@ -142,7 +150,14 @@
   </style>
 </head>
 <body>
-<header>🏃 RunTogether Whitefield</header>
+
+<header>
+  <img
+    src="./images/rtw header cropped.jpg"
+    alt="RunTogether Whitefield"
+    class="header-logo"
+  />
+</header>
   
 <div style="padding:12px 16px; display:flex; gap:10px; background:#151924; border-top:1px solid #222;">
   <button class="btn" onclick="showSection('routes')">Routes</button>
