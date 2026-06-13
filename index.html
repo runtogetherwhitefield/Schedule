@@ -292,19 +292,25 @@ function renderSchedule() {
         ${formattedDate} · ${run.time || ''}
       </div>
 
-      <h3 class="route-title" style="min-height:auto; margin-bottom:6px;">
-        ${route.name || ''}
-      </h3>
-
       ${
         route
           ? `
-            <p style="margin:0 0 8px 0; font-weight:600;">
-              ${run.runningGroup}
-            </p>
+            <h3 class="route-title" style="min-height:auto; margin-bottom:6px;">
+              ${route.name}
+            </h3>
           `
           : ''
       }
+
+      <p
+        style="
+          margin:0 0 8px 0;
+          color:#b8c2d1;
+          font-weight:600;
+        "
+      >
+        ${run.runningGroup || ''}
+      </p>
 
       <p style="margin:0 0 14px 0; color:#9ea8b8;">
         ${run.notes || ''}
