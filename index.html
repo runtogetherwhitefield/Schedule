@@ -293,14 +293,14 @@ function renderSchedule() {
       </div>
 
       <h3 class="route-title" style="min-height:auto; margin-bottom:6px;">
-        ${run.runningGroup || ''}
+        ${route.name || ''}
       </h3>
 
       ${
         route
           ? `
             <p style="margin:0 0 8px 0; font-weight:600;">
-              ${route.name}
+              ${run.runningGroup}
             </p>
           `
           : ''
